@@ -5,7 +5,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-
 - stage: Build
   jobs:
   - job: FirstJob
@@ -14,26 +13,23 @@ stages:
   - job: SecondJob
     steps:
      - bash: echo Build SecondJob
-
 - stage: DevDeploy
   dependsOn: Build
   jobs:
   - job: DevDeployJob
     steps:
      - bash: echo DeployJob
-
 - stage: QADeploy
   dependsOn: Build
-   jobs:
-   - job: QADeployJob
-     steps:
-      - bash: echo DeployJob
-
+  jobs:
+  - job: QADeployJob
+    steps:
+    - bash: echo DeployJob
 - stage: ProdDeploy
-   dependsOn: 
+  dependsOn: 
     - DevDeploy
     - QADeploy
-   jobs:
-   - job: ProdDeployJob
-     steps:
-      - bash: echo ProdDeployJob
+  jobs:
+  - job: ProdDeployJob
+    steps:
+    - bash: echo ProdDeployJob
