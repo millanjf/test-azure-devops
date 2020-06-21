@@ -32,7 +32,7 @@ jobs:
   - script: echo Job 2
     displayName: 'Job 2'
 
-  - job: Job3
+- job: Job3
   steps:
   - script: echo Job 3. Parallel with job1
     displayName: 'Job 3'
