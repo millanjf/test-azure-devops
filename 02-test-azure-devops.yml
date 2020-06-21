@@ -12,9 +12,9 @@ stages:
     - bash: echo Build FirstJob
     - bash: echo $(PipelineVariable)
     - bash: echo $(Build.BuildNumber)
-    - bash: echo $(Build.PipelineId)
-    - bash: echo $(Build.SourcesBranchName)
-    - bash: echo $(Build.SourcesDirectory)
+    - bash: echo $(Build.BuildId)
+    - bash: echo $(Build.SourceBranchName)
+    - bash: echo $(Build.SourceDirectory)
     - bash: ls -R $(System.DefaultWoringDirectory)
     - bash: echo $(Build.ArtifactStagingDirectory)
 
