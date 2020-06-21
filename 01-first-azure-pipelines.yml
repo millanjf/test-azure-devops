@@ -14,7 +14,7 @@ stages:
     steps:
     - bash: echo Build SecondJob
 
-- stage: DevDeployJob
+- stage: DevDeploy
   jobs:
   - job: DevDeployJob
     steps:
