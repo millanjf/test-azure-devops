@@ -19,19 +19,3 @@ stages:
   - job: DevDeploy
     steps:
     - bash: echo DevDeploy
-
-
-- stage: QADeploy
-  dependsOn: Build
-  jobs:
-  - job: QADeployJob
-    steps:
-    - bash: echo DeployJob
-- stage: ProdDeploy
-  dependsOn: 
-    - DevDeploy
-    - QADeploy
-  jobs:
-  - job: ProdDeployJob
-    steps:
-    - bash: echo ProdDeployJob
