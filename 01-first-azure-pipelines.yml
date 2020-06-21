@@ -16,6 +16,6 @@ stages:
 
 - stage: DevDeploy
   jobs:
-  - job: DevDeployJob
+  - job: Job2
     steps:
-    - bash: echo Build DevDeployJob
+    - script: echo Job 2
